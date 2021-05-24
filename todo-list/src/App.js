@@ -7,6 +7,9 @@ function App(){
         <div>
             <Header />
             <Item item={{title:"React Project", description:"Complete todo app"}} />
+            <Item item={{title:"React Project", description:"Complete todo app"}} />
+            <Item item={{title:"React Project", description:"Complete todo app"}} />
+            <Item item={{title:"React Project", description:"Complete todo app"}} />
         </div>
     )
 }
