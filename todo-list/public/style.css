@@ -1,3 +1,38 @@
-h1 {
-  background-color: yellow;
+body {
+  width: 50%;
+  margin: auto;
+  background-color: #eed6d3;
+}
+.header > h1 {
+  display: flex;
+  border: 1px cyan solid;
+  justify-content: center;
+}
+
+.task {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 5px;
+  background-color: #b6e2d3;
+  border: 4px #ef7c8e solid;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px #ef7c8e;
+}
+.task > h1 {
+  font-size: 22px;
+  text-align: center;
+  background-color: #ef7c8e;
+  /* border: 4px red solid; */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-top: -4px;
+  padding: 3px;
+}
+
+.task > h2 {
+  display: flex;
+  font-size: 18px;
+  border: 1px green solid;
+  text-align: left;
 }
