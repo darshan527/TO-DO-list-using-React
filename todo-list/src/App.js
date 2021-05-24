@@ -1,9 +1,10 @@
 import React from 'react'
+import Item from './components/Item'
 
 function App(){
     return (
         <div>
-            <h1>Hello World</h1>
+            <Item item={{title:"React Project", description:"Complete todo app"}} />
         </div>
     )
 }
