@@ -14,7 +14,7 @@ body {
   flex-direction: column;
   width: 100%;
   margin-top: 5px;
-  background-color: #b6e2d3;
+  background-color: #ef7c8e;
   border: 4px #ef7c8e solid;
   border-radius: 10px;
   box-shadow: 0px 0px 5px #ef7c8e;
@@ -23,16 +23,28 @@ body {
   font-size: 22px;
   text-align: center;
   background-color: #ef7c8e;
+  /* background-color: red; */
   /* border: 4px red solid; */
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   margin-top: -4px;
+  margin-left: -4px;
+  margin-right: -4px;
   padding: 3px;
 }
 
 .task > h2 {
   display: flex;
+  flex-direction: column;
+  /* margin: auto; */
+  /* margin-top: -15px; */
+  /* margin-bottom: -4px; */
+  margin: -15px -4px -4px -4px;
+  padding: 5px;
+  height: 50px;
   font-size: 18px;
-  border: 1px green solid;
+  border: 4px #ef7c8e solid;
+  border-radius: 10px;
+  background-color: #b6e2d3;
   text-align: left;
 }
