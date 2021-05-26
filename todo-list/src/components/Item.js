@@ -1,12 +1,24 @@
 import React from 'react'
 
-function Item(props) {
-    return (
-        <div className="task">
-                <h1>{props.item.title}</h1>
-                <h2>{props.item.description}</h2>
-        </div>
-    )
+class Item extends React.Component {
+
+    constructor(props){
+        super(props)
+        this.state = {
+                title : props.title,
+                description : props.description
+        }
+    }
+
+    render(){
+        return (
+            <div className="task">
+                    <h1>{this.state.title}</h1>
+                    <h2>{this.state.description}</h2>
+            </div>
+        )
+    }
+
 }
 
 export default Item
