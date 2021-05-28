@@ -5,8 +5,8 @@ class Item extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-                title : props.title,
-                description : props.description
+                title : props.item.title,
+                description : props.item.description
         }
     }
 
