@@ -1,10 +1,6 @@
 import React from 'react'
 import Item from './Item'
 class AddItem extends React.Component {
-    // show = false
-    // setShow(e){
-    //     this.show = true
-    // }
     constructor(props){
         super(props)
         this.state = {
