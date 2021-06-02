@@ -1,41 +1,40 @@
-import React, {useEffect, useState} from 'react'
+import React, { useState} from 'react'
+import Header from './components/Header'
+import Item from './components/Item'
 
 function App(){
-    // const [tasksList, setTask] = useState([])
-    const [count, setCount] = useState(0)
+    const [tasksList, setTask] = useState([])
+    const [count , setCount] = useState(0)
 
-    // setCount(count + 1)
-    // setCount(){
-    //     count.setState(prevState => {
-    //         count = prevState + 1
-    //     })
-    //     console.log(count)
-    // }
-
-    // setTask(Event, setCount){
-    //     setCount()
-    // }
-    // const [count, setCount] = useState(0);
-
-    // return (
-    //   <div>
-    //     <p>You clicked {count} times</p>
-    //     <button onClick={() => setCount(count + 1)}>
-    //         Click me
-    //        </button>
-    //      </div>
-    //    );
-
-    function incrementCount() {
-        setCount(c => c + 1)
+    function addTask(){
+        const task =  prompt("Enter the task")
+        setCount(count + 1)
+        setTask(prevTaskList => [
+            ...prevTaskList,
+            <Item key={count} item={{title:[count], description:[task]}} />
+            ])
+        console.log(tasksList)
     }
 
-    // useEffect(() => {console.log(count)},[count])
+    function removeItem(){
+        const id = prompt("enter the item number")
+        var tmpList = [...tasksList]
+        var indx = id // tmpList.indexOf(id)
+        if (indx !== -1) {
+            tmpList.splice(indx,1)
+            setCount(c => 0)
+            setTask(tm => tmpList)
+        }
+        // console.log(tasksList)
+        console.log(`tmp ${tmpList} index: ${indx} cnt ${count}`)
+    }
+
     return (
         <div>
-            <h1>Hello World</h1>
-            <p>{count}</p>
-            <button onClick={incrementCount}>Click thiss</button>
+            <Header />
+            {tasksList}
+            <button onClick={addTask}>Click thiss</button>
+            <button onClick={removeItem}>Remove</button>
         </div>
     )
 }
