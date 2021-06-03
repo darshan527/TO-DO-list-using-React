@@ -8,12 +8,15 @@ function App(){
 
     function addTask(){
         const task =  prompt("Enter the task")
-        setCount(count + 1)
-        setTask(prevTaskList => [
+        console.log(task)
+        if (task !== ""){
+            setCount(count + 1)
+            setTask(prevTaskList => [
             ...prevTaskList,
             <Item key={count} item={{title:[count], description:[task]}} />
             ])
-        console.log(tasksList)
+            console.log(tasksList)
+        }
     }
 
     function removeItem(){
