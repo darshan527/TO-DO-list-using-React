@@ -8,14 +8,11 @@ function App(){
     const [renderList, setRenderList] = useState([])
 
     function renderTasks(){
-        // setCount(0)
         var i = 0
         const rlst = tasksList.map(itm => {
-            // setCount(c => c + 1)
             i++
             return <Item key={i} item={{title:[i], description:[itm]}} />
         })
-        // console.log(`rlst ${rlst}`)
         setRenderList(rlst)
     }
 
@@ -25,7 +22,6 @@ function App(){
         const task =  prompt("Enter the task")
         console.log(task)
         if (task !== null && task !== ""){
-            setCount(c => c + 1) //not needed
             setTask(prevTaskList => [
             ...prevTaskList,
             task
@@ -39,11 +35,10 @@ function App(){
         var tmpList = [...tasksList]
         var indx = id-1
         if (indx !== -1) {
-            setCount(c => c - 1)
             tmpList.splice(indx,1)
             setTask(tmpList)
-            // renderTasks()
         }
+
         console.log(tasksList)
         // console.log(`tmp ${tmpList} index: ${indx} cnt ${count}`)
     }
