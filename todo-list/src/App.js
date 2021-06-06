@@ -4,7 +4,7 @@ import Item from './components/Item'
 
 function App(){
     const [tasksList, setTask] = useState([])
-    const [count , setCount] = useState(0)
+    // const [count , setCount] = useState(0)
     const [renderList, setRenderList] = useState([])
 
     function renderTasks(){
@@ -16,7 +16,7 @@ function App(){
         setRenderList(rlst)
     }
 
-    useEffect(renderTasks, [count, tasksList])
+    useEffect(renderTasks, [tasksList])
 
     function addTask(){
         const task =  prompt("Enter the task")
