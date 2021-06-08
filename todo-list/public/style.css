@@ -46,9 +46,6 @@ body {
 .task > h2 {
   display: flex;
   flex-direction: column;
-  /* margin: auto; */
-  /* margin-top: -15px; */
-  /* margin-bottom: -4px; */
   margin: -15px -4px -4px -4px;
   padding: 5px;
   height: 50px;
