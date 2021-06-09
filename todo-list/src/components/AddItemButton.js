@@ -10,7 +10,7 @@ export default class AddItemButton extends React.Component {
      }
 
     ad(){
-        const t = prompt("Enter the title");
+        // const t = prompt("Enter the title");
         const d = prompt("Enter the Description");
         App.renderTasks(<AddItem item={{title:t, description:d}} />)
     }
