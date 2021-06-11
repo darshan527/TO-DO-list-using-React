@@ -8,11 +8,18 @@ class Item extends React.Component {
                 title : props.item.title,
                 description : props.item.description
         }
+        this.changeDesc = this.changeDesc.bind(this)
+    }
+
+
+    changeDesc = () => {
+        console.log(this.state.description)
+        this.setState({description: "changedit"})
     }
 
     render(){
         return (
-            <div className="task">
+            <div className="task" onClick={this.changeDesc}>
                     <h1>{this.state.title}</h1>
                     <h2>{this.state.description}</h2>
             </div>
