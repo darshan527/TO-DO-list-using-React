@@ -4,7 +4,6 @@ import Item from './components/Item'
 
 function App(){
     const [tasksList, setTask] = useState([])
-    // const [count , setCount] = useState(0)
     const [renderList, setRenderList] = useState([])
 
     function renderTasks(){
