@@ -19,7 +19,7 @@ class Item extends React.Component {
 
     render(){
         return (
-            <div className="task" onClick={this.changeDesc}>
+            <div className="task" >
                     <h1>{this.state.title}</h1>
                     <h2>{this.state.description}</h2>
             </div>
