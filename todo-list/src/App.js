@@ -29,18 +29,18 @@ function App(){
         }
     }
 
-    function removeItem(){
-        const id = prompt("enter the item number")
-        var tmpList = [...tasksList]
-        var indx = id-1
-        if (indx !== -1) {
-            tmpList.splice(indx,1)
-            setTask(tmpList)
-        }
+    // function removeItem(){
+    //     const id = prompt("enter the item number")
+    //     var tmpList = [...tasksList]
+    //     var indx = id-1
+    //     if (indx !== -1) {
+    //         tmpList.splice(indx,1)
+    //         setTask(tmpList)
+    //     }
 
-        console.log(tasksList)
-        // console.log(`tmp ${tmpList} index: ${indx} cnt ${count}`)
-    }
+    //     console.log(tasksList)
+    //     // console.log(`tmp ${tmpList} index: ${indx} cnt ${count}`)
+    // }
 
     return (
         <div>
