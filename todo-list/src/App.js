@@ -1,53 +1,43 @@
-import React, { useEffect, useState} from 'react'
+import React, { useState } from 'react'
 import Header from './components/Header'
 import Item from './components/Item'
+import { nanoid } from 'nanoid'
 
-function App(){
+function App() {
     const [tasksList, setTask] = useState([])
-    const [renderList, setRenderList] = useState([])
 
-    function renderTasks(){
-        var i = 0
-        const rlst = tasksList.map(itm => {
-            i++
-            return <Item key={i} item={{title:[i], description:[itm]}} />
-        })
-        setRenderList(rlst)
-    }
+    function addTask() {
+        const task = prompt("Enter the task")
+        const desc = prompt("Enter the Description")
 
-    useEffect(renderTasks, [tasksList])
+        const tmpItem = {
+            id: nanoid(),
+            title: task,
+            description: desc
+        }
 
-    function addTask(){
-        const task =  prompt("Enter the task")
-        console.log(task)
-        if (task !== null && task !== ""){
+        if (task !== null && task !== "") {
             setTask(prevTaskList => [
-            ...prevTaskList,
-            task
+                ...prevTaskList,
+                tmpItem
             ])
-            console.log(tasksList)
+            // console.log(tasksList)
         }
     }
 
-    function removeItem(){
-        const id = prompt("enter the item number")
-        var tmpList = [...tasksList]
-        var indx = id-1
-        if (indx !== -1) {
-            tmpList.splice(indx,1)
-            setTask(tmpList)
-        }
-
-        console.log(tasksList)
-        // console.log(`tmp ${tmpList} index: ${indx} cnt ${count}`)
+    function removeItem(itemId) {
+        const newArray = tasksList.filter(item => item.id !== itemId)
+        setTask(newArray)
+        // console.log("After deleting", tasksList)
     }
 
     return (
         <div>
             <Header />
-            {renderList}
+            {tasksList.map(itm => {
+                return <Item key={itm.id} removeItem={removeItem} item={{ id: itm.id, title: itm.title, description: itm.description }} />
+            })}
             <button onClick={addTask}>Click thiss</button>
-            <button onClick={removeItem}>Remove</button>
         </div>
     )
 }
